@@ -12,6 +12,7 @@ let showingTerm = true;
 
 const content = document.getElementById('card-content');
 const next = document.getElementById('next-btn');
+const prev = document.getElementById('prev-btn');
 
 // Start with this function to simply display the card
 function displayCard() {
@@ -21,6 +22,11 @@ function displayCard() {
 // The rest of the code you will write is apart of event listeners
 next.addEventListener('click', function() {
     currentIndex = (currentIndex + 1) % numCards;
+    displayCard();
+});
+
+prev.addEventListener('click', function() {
+    currentIndex = (currentIndex - 1 + numCards) % numCards;
     displayCard();
 });
 
