@@ -11,6 +11,7 @@ let currentIndex = 0;
 let showingTerm = true;
 
 const content = document.getElementById('card-content');
+const next = document.getElementById('next-btn');
 
 // Start with this function to simply display the card
 function displayCard() {
@@ -18,7 +19,10 @@ function displayCard() {
 }
 
 // The rest of the code you will write is apart of event listeners
-
+next.addEventListener('click', function() {
+    currentIndex = (currentIndex + 1) % numCards;
+    displayCard();
+});
 
 // This line will display the card when the page is refreshed
 window.onload = displayCard;
