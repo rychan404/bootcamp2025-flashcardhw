@@ -7,8 +7,7 @@ const flashcards = [
 // You can use flashcards.length to get the length of the array
 let numCards = flashcards.length;
 // These two variables will come in handy
-let currentIndex = 0; 
-let showingTerm = true;
+let currentIndex = 0;
 
 const content = document.getElementById('card-content');
 const next = document.getElementById('next-btn');
