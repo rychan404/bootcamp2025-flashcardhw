@@ -5,7 +5,7 @@ const flashcards = [
 ];
 
 // You can use flashcards.length to get the length of the array
-const numCards = flashcards.length;
+let numCards = flashcards.length;
 // These two variables will come in handy
 let currentIndex = 0; 
 let showingTerm = true;
@@ -13,6 +13,7 @@ let showingTerm = true;
 const content = document.getElementById('card-content');
 const next = document.getElementById('next-btn');
 const prev = document.getElementById('prev-btn');
+const add = document.getElementById('add-card-btn');
 
 // Start with this function to simply display the card
 function displayCard() {
@@ -28,6 +29,13 @@ next.addEventListener('click', function() {
 prev.addEventListener('click', function() {
     currentIndex = (currentIndex - 1 + numCards) % numCards;
     displayCard();
+});
+
+add.addEventListener('click', function() {
+    const newTerm = document.getElementById('new-term');
+    const newDef = document.getElementById('new-definition');
+    flashcards.push({term: newTerm.value, definition: newDef.value});
+    numCards = flashcards.length;
 });
 
 // This line will display the card when the page is refreshed
