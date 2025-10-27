@@ -35,6 +35,8 @@ add.addEventListener('click', function() {
     const newDef = document.getElementById('new-definition');
     flashcards.push({term: newTerm.value, definition: newDef.value});
     numCards = flashcards.length;
+    newTerm.value = '';
+    newDef.value = '';
 });
 
 // This line will display the card when the page is refreshed
